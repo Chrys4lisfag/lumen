@@ -28,8 +28,8 @@ services:
             db:
                 condition: service_healthy
         ports:
-            - 1234:1234
-            - 8082:8082
+            -${LUMINA_PORT:-1234}:1234
+            -${LUMINA_API_PORT:-8082}:8082
         environment:
             PKCSPASSWD: $PKCSPASSWD
             DATABASE_URL: postgres://lumina:1@db/lumina
